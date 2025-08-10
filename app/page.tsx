@@ -1,28 +1,28 @@
-"use client" // Added 'use client' directive as we are using client-side interactivity
+'use client' // Added 'use client' directive as we are using client-side interactivity
 
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
 import { Navigation } from "@/components/navigation"
 import { TechnologySection } from "@/components/technology-section"
 import { ProductCatalog } from "@/components/product-catalog"
-import { WhatsAppFloatingButton, WhatsAppButton } from "@/components/whatsapp-integration" // Import WhatsAppButton
+import { WhatsAppFloatingButton } from "@/components/whatsapp-integration"
 import { Testimonials } from "@/components/testimonials"
 import { Certifications } from "@/components/certifications"
 import { AnimatedStats } from "@/components/animated-stats"
 import { FAQSection } from "@/components/faq-section"
 import { TeamSection } from "@/components/team-section" // Import new TeamSection
 import { AwardsSection } from "@/components/awards-section" // Import new AwardsSection
-import { ParallaxImage } from "@/components/parallax-image" // Import ParallaxImage
-import { Linkedin } from "lucide-react"
+import { Linkedin } from 'lucide-react';
 
 export default function HomePage() {
   const handleScrollTo = (id: string) => {
-    const element = document.getElementById(id)
+    const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-  }
+  };
 
   return (
     <div className="min-h-screen">
@@ -32,8 +32,8 @@ export default function HomePage() {
       <section id="home" className="relative h-screen flex items-center justify-center">
         <div className="absolute inset-0">
           <Image
-            src="/images/tractor-field-aerial.png"
-            alt="Agricultural field with modern farming"
+            src="/images/farm-aerial.jpg"
+            alt="Aerial view of agricultural farmland"
             fill
             className="object-cover"
             priority
@@ -42,38 +42,31 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
-          <h1
-            className="text-4xl md:text-6xl font-bold mb-6 animate-premium-text-reveal"
-            style={{ animationDelay: "0.5s" }}
-          >
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="text-green-400">Food & Healthy Ingredients</span>
             <br />
             <span className="text-white">at Healthy Environments</span>
           </h1>
-          <p
-            className="text-xl md:text-2xl mb-8 text-green-300 animate-premium-text-reveal"
-            style={{ animationDelay: "1s" }}
-          >
+          <p className="text-xl md:text-2xl mb-8 text-green-300">
             Empowering farmers with eco-friendly practices and tools
           </p>
-          <div className="flex justify-center gap-4">
-            {" "}
-            {/* Added flex and gap for button alignment */}
+          <div className="flex justify-center gap-4"> {/* Added flex and gap for button alignment */}
             <Button
               size="lg"
               className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg"
-              onClick={() => handleScrollTo("products")}
+              onClick={() => handleScrollTo('products')}
             >
               Explore Our Services
             </Button>
-            {/* Changed to WhatsApp Button */}
-            <WhatsAppButton
-              phoneNumber="919075978141" // Your WhatsApp number
-              message="Hello! I'm interested in partnering with Mahacrop Agrofoods LLP."
-              className="bg-transparent border-white text-white hover:bg-white/20 px-8 py-3 text-lg"
-            >
-              Partner With Us
-            </WhatsAppButton>
+            <Link href="/partner-with-us" passHref>
+              <Button
+                size="lg"
+                variant="outline"
+                className="bg-transparent border-white text-white hover:bg-white/20 px-8 py-3 text-lg"
+              >
+                Partner With Us
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -95,12 +88,11 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <div className="relative h-80 rounded-lg overflow-hidden shadow-lg">
-                <ParallaxImage
+                <Image
                   src="/images/agricultural-growth-data.png"
                   alt="Agricultural growth with data visualization"
                   fill
                   className="object-cover"
-                  speed={0.1} // Adjust speed as needed
                 />
               </div>
             </div>
@@ -140,22 +132,14 @@ export default function HomePage() {
           {/* CEO Section - Integrated into About */}
           <div className="mb-16">
             <h3 className="text-3xl font-bold text-green-800 text-center mb-12">Meet Our Founder & CEO</h3>
-            <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden p-8 md:p-12">
-              <div className="flex flex-col items-center text-center mb-8">
-                {/* Photo */}
-                <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-xl border-4 border-green-100 bg-gradient-to-br from-gray-100 to-gray-200 mb-6">
-                  <Image
-                    src="/images/akshay-satav-photo.jpg"
-                    alt="Dr. Akshay Satav, CEO of Mahacrop Agrofoods LLP"
-                    fill
-                    className="object-cover object-center"
-                    priority
-                  />
-                </div>
-                {/* Name and Title */}
-                <h2 className="text-3xl md:text-4xl font-bold text-green-800 leading-tight mb-2">Dr. Akshay Satav</h2>
-                <p className="text-green-600 text-xl font-semibold mb-4">Founder & CEO</p>
-                <div className="flex items-center justify-center gap-3">
+            <div className="max-w-4xl mx-auto bg-white shadow-xl rounded-lg overflow-hidden p-8 md:p-12 grid md:grid-cols-2 gap-8 items-center">
+              {/* Left: Name and Information */}
+              <div className="space-y-6 text-center md:text-left">
+                <p className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Our Founder</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-green-800 leading-tight whitespace-nowrap">
+                  Our Visionary Founder & CEO
+                </h2>
+                <div className="flex items-center justify-center md:justify-start gap-3">
                   <Linkedin className="w-6 h-6 text-blue-600" />
                   <Link
                     href="https://www.linkedin.com/in/dr-akshay-satav-3a2b98263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
@@ -163,18 +147,24 @@ export default function HomePage() {
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline font-medium text-lg"
                   >
-                    LinkedIn Profile
+                    Dr. Akshay Satav
                   </Link>
                 </div>
+                <p className="text-gray-700 text-lg font-semibold">Founder & CEO</p>
+                <p className="text-gray-600 leading-relaxed">
+                  Dr. Akshay Satav, the dynamic CEO of Mahacrop Agro Foods LLP, is a visionary leader committed to transforming Indian agriculture through innovation, sustainability, and farmer-centric solutions. With a deep-rooted understanding of agro-sciences and rural development, he has positioned Mahacrop as a trusted name in the agricultural ecosystem, empowering farming communities and promoting environmentally responsible practices with a global impact.
+                </p>
               </div>
-              {/* Description */}
-              <p className="text-gray-600 leading-relaxed text-center md:text-left">
-                Dr. Akshay Satav, the dynamic CEO of Mahacrop Agro Foods LLP, is a visionary leader committed to
-                transforming Indian agriculture through innovation, sustainability, and farmer-centric solutions. With a
-                deep-rooted understanding of agro-sciences and rural development, he has positioned Mahacrop as a
-                trusted name in the agricultural ecosystem, empowering farming communities and promoting environmentally
-                responsible practices with a global impact.
-              </p>
+              {/* Right: Photo */}
+              <div className="relative w-full h-64 md:h-80 rounded-lg overflow-hidden shadow-xl border border-gray-200 bg-gradient-to-br from-gray-100 to-gray-200">
+                <Image
+                  src="/images/akshay-satav-photo.jpg"
+                  alt="Dr. Akshay Satav, CEO of Mahacrop Agrofoods LLP"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+              </div>
             </div>
           </div>
 
@@ -213,9 +203,7 @@ export default function HomePage() {
       <TechnologySection />
 
       {/* Products Section */}
-      <section id="products">
-        {" "}
-        {/* Added id="products" here */}
+      <section id="products"> {/* Added id="products" here */}
         <ProductCatalog />
       </section>
 
@@ -278,9 +266,7 @@ export default function HomePage() {
       <AwardsSection />
 
       {/* Footer */}
-      <footer id="contact" className="relative py-12 text-white overflow-hidden">
-        {" "}
-        {/* Added id="contact" here */}
+      <footer id="contact" className="relative py-12 text-white overflow-hidden"> {/* Added id="contact" here */}
         <Image
           src="/images/footer-background.jpeg"
           alt="Tea plantation background"
