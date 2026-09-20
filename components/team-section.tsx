@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Linkedin } from "lucide-react"
 
@@ -30,8 +29,12 @@ export function TeamSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl">
         {teamMembers.map((member) => (
           <article key={member.name} className="border border-chamber/15 bg-white p-6">
-            <div className="relative w-full h-56 mb-5 overflow-hidden">
-              <Image src={member.imageSrc || "/placeholder.svg"} alt={member.name} fill className="object-cover object-top" />
+            <div className="bg-icefield mb-5">
+              <img
+                src={member.imageSrc || "/placeholder.svg"}
+                alt={member.name}
+                className="w-full h-auto max-h-[22rem] object-contain object-top mx-auto"
+              />
             </div>
             <h3 className="font-display text-xl uppercase text-chamber mb-1">{member.name}</h3>
             <p className="crate-stamp text-[11px] text-pulp mb-3">{member.title}</p>

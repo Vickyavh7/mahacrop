@@ -30,8 +30,29 @@ export default function HomePage() {
 
       <section id="home" className="relative min-h-[100dvh] pt-20 lg:pr-24">
         <div className="grid min-h-[calc(100dvh-5rem)] lg:grid-cols-12">
-          <div className="relative z-10 flex flex-col justify-center px-4 py-12 sm:px-8 lg:col-span-6 lg:px-12 bg-chamber text-icefield">
-            <p className="crate-stamp text-kernel mb-6">Wadhu Bk · Tal. Shirur · Dist. Pune</p>
+          <div className="relative z-10 flex flex-col justify-center px-4 py-12 sm:px-8 lg:col-span-6 lg:px-12 bg-chamber text-icefield overflow-hidden">
+            <Image
+              src="/images/frozen-vegetables.png"
+              alt=""
+              fill
+              className="object-cover opacity-50"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-chamber/90 via-chamber/78 to-chamber/65" />
+            <div
+              className="pointer-events-none absolute inset-0 opacity-[0.12]"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(90deg, transparent 0, transparent 47px, #F0C75E 47px, #F0C75E 48px)",
+              }}
+            />
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 hidden sm:flex flex-col justify-between py-16 crate-stamp text-[9px] text-kernel/70">
+              <span>0°</span>
+              <span>−8°</span>
+              <span>−18°</span>
+            </div>
+            <div className="relative z-10">
+            <p className="crate-stamp text-kernel mb-6">IQF · Sweet corn · Export hold</p>
             <p className="font-display text-[4.5rem] sm:text-8xl leading-none text-kernel">−18°</p>
             <h1 className="font-display mt-4 text-4xl sm:text-5xl md:text-6xl leading-[0.95] uppercase">
               Held from the farm
@@ -57,6 +78,7 @@ export default function HomePage() {
               </Link>
             </div>
             <p className="mt-10 crate-stamp text-[10px] text-steel">LOT MH-SRU · IQF · IBM · FSSAI</p>
+            </div>
           </div>
           <div className="relative min-h-[42vh] lg:col-span-6 lg:min-h-full">
             <Image
@@ -80,12 +102,12 @@ export default function HomePage() {
           <h2 className="font-display text-4xl sm:text-5xl uppercase text-chamber mb-10">Mahacrop Agro Foods</h2>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start mb-16">
-            <div className="relative h-80 overflow-hidden border border-steel/40">
+          <div className="relative h-80 overflow-hidden border border-steel/40 bg-chamber">
               <Image
                 src="/images/agricultural-growth-data.png"
                 alt="Agricultural growth with data visualization"
                 fill
-                className="object-cover"
+                className="object-cover object-[center_70%]"
               />
             </div>
             <div className="space-y-5 text-lg text-ink/90 leading-relaxed">
@@ -134,13 +156,11 @@ export default function HomePage() {
                 laboratory in the middle.
               </p>
             </div>
-            <div className="relative min-h-64 md:min-h-full">
-              <Image
+            <div className="flex items-center justify-center bg-icefield p-4 md:p-6">
+              <img
                 src="/images/akshay-satav-photo.jpg"
                 alt="Dr. Akshay Satav, CEO of Mahacrop Agrofoods LLP"
-                fill
-                className="object-cover object-center"
-                priority
+                className="max-h-[28rem] w-full object-contain"
               />
             </div>
           </div>
@@ -157,12 +177,12 @@ export default function HomePage() {
               </p>
               <p className="text-lg text-ink/80 leading-relaxed">Founded by Dr. Akshay Satav, with farm people at the core of the line.</p>
             </div>
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-64 overflow-hidden bg-icefield">
               <Image
                 src="/images/plant-nurturing.png"
                 alt="Nurturing plant growth representing company development"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
               />
             </div>
           </div>
