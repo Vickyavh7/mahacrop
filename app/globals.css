@@ -4,26 +4,26 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 150 33% 96%;
+    --foreground: 158 20% 14%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 158 20% 14%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --popover-foreground: 158 20% 14%;
+    --primary: 158 51% 15%;
+    --primary-foreground: 150 33% 96%;
+    --secondary: 150 20% 90%;
+    --secondary-foreground: 158 20% 14%;
+    --muted: 150 16% 90%;
+    --muted-foreground: 158 10% 35%;
+    --accent: 45 82% 66%;
+    --accent-foreground: 158 51% 15%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --radius: 0.5rem;
+    --border: 158 18% 82%;
+    --input: 158 18% 82%;
+    --ring: 45 82% 66%;
+    --radius: 0.125rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -64,12 +64,30 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground overflow-x-hidden;
+    @apply bg-icefield text-ink overflow-x-hidden;
   }
 
   html {
     scroll-behavior: smooth;
   }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-kernel;
+  }
+}
+
+.crate-stamp {
+  font-family: var(--font-lot), ui-monospace, monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-kicker {
+  font-family: var(--font-lot), ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #12382c;
 }
 
 @media (prefers-reduced-motion: reduce) {

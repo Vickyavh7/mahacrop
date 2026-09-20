@@ -78,7 +78,7 @@ function AnimatedCounter({ target, duration = 2000, suffix = "", prefix = "" }: 
   }
 
   return (
-    <div ref={counterRef} className="text-4xl font-bold text-green-700">
+    <div ref={counterRef} className="font-display text-4xl text-kernel">
       {prefix}
       {formatNumber(count)}
       {suffix}
@@ -127,69 +127,32 @@ export function AnimatedStats() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-green-50 relative overflow-hidden">
-      {/* Background Decorative Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-br from-green-200/20 to-green-300/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-br from-orange-200/20 to-orange-300/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      </div>
+    <section className="py-20 bg-chamber text-icefield relative overflow-hidden">
+      <div className="container mx-auto px-6 relative z-10 lg:pr-28">
+        <p className="section-kicker text-kernel mb-3">Scale</p>
+        <h2 className="font-display text-4xl sm:text-5xl uppercase mb-4">What the line already holds</h2>
+        <p className="text-icefield/75 max-w-2xl mb-12">
+          Farmers, acres, villages, and ports — the network behind every crate.
+        </p>
 
-      <div className="container mx-auto px-6 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-4">Our Impact in Numbers</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mb-8 rounded-full"></div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Building trust through consistent quality and service excellence across the agricultural industry
-          </p>
-        </div>
-
-        {/* Stats Grid - Updated to show 3 in one line */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-kernel/20 border border-kernel/20">
           {stats.map((stat, index) => (
             <Card
               key={index}
-              className="group relative overflow-hidden bg-white shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border-0"
+              className="group relative overflow-hidden bg-chamber border-0 rounded-none shadow-none"
             >
-              {/* Background Pattern */}
-              <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-green-100 opacity-50"></div>
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-green-200/30 to-transparent rounded-full transform translate-x-16 -translate-y-16"></div>
-
-              <CardContent className="relative p-8 text-center">
-                {/* Icon Container */}
-                <div className="relative mb-6">
-                  <div className="w-24 h-24 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative overflow-hidden border-4 border-green-100">
-                    {/* Icon Glow Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-green-100/50 rounded-2xl"></div>
-                    <div className="relative z-10 flex items-center justify-center">{stat.icon}</div>
-                  </div>
-
-                  {/* Floating Ring Animation */}
-                  <div className="absolute inset-0 w-24 h-24 mx-auto border-2 border-green-300/30 rounded-2xl animate-ping opacity-75"></div>
-                </div>
-
-                {/* Animated Counter */}
-                <div className="mb-4">
+              <CardContent className="relative p-8">
+                <div className="mb-4 flex items-center gap-3">{stat.icon}</div>
+                <div className="mb-2">
                   <AnimatedCounter target={stat.value} duration={2500} suffix={stat.suffix} prefix={stat.prefix} />
                 </div>
-
-                {/* Label */}
-                <h3 className="text-lg font-semibold text-gray-800 leading-tight">{stat.label}</h3>
-
-                {/* Hover Effect Line */}
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-green-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                <h3 className="crate-stamp text-[11px] text-icefield/70 leading-tight">{stat.label}</h3>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-green-100 to-green-200 px-6 py-3 rounded-full">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-green-800 font-semibold">Growing Every Day</span>
-          </div>
-        </div>
+        <p className="crate-stamp text-[11px] text-kernel mt-10">Hold is active</p>
       </div>
     </section>
   )

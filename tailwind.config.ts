@@ -12,7 +12,18 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			display: ["var(--font-display)", "sans-serif"],
+  			sans: ["var(--font-body)", "sans-serif"],
+  			lot: ["var(--font-lot)", "ui-monospace", "monospace"],
+  		},
   		colors: {
+  			chamber: "#12382C",
+  			icefield: "#F3FAF6",
+  			kernel: "#F0C75E",
+  			pulp: "#E07A3D",
+  			steel: "#8FA8A0",
+  			ink: "#1C2A26",
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

@@ -36,29 +36,24 @@ export function FAQSection() {
   ]
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-4">Frequently Asked Questions</h2>
-          <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Get answers to common questions about our products and services
-          </p>
-        </div>
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-6 lg:pr-28">
+        <p className="section-kicker mb-3">Spec questions</p>
+        <h2 className="font-display text-4xl sm:text-5xl uppercase text-chamber mb-10">Ask the packhouse</h2>
 
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="max-w-4xl space-y-px bg-chamber/10">
           {faqs.map((faq, index) => (
-            <Card key={index} className="bg-white shadow-md">
+            <Card key={index} className="rounded-none border-0 shadow-none bg-white">
               <CardContent className="p-0">
                 <button
-                  className="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+                  className="w-full p-6 text-left flex justify-between items-center hover:bg-icefield transition-colors"
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 >
-                  <h3 className="text-lg font-semibold text-gray-800 pr-4">{faq.question}</h3>
+                  <h3 className="text-lg font-semibold text-chamber pr-4">{faq.question}</h3>
                   {openIndex === index ? (
-                    <ChevronUp className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <ChevronUp className="w-5 h-5 text-kernel flex-shrink-0" />
                   ) : (
-                    <ChevronDown className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <ChevronDown className="w-5 h-5 text-kernel flex-shrink-0" />
                   )}
                 </button>
                 {openIndex === index && (

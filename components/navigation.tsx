@@ -29,8 +29,8 @@ export function Navigation() {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/10 pt-[env(safe-area-inset-top)]">
-      <div className="container mx-auto px-4 py-3 md:py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-kernel/30 bg-chamber pt-[env(safe-area-inset-top)]">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between gap-3">
           <Link href="/" className="flex items-center gap-3 min-w-0" onClick={() => setIsOpen(false)}>
             <div className="relative w-32 h-10 sm:w-40 sm:h-12 shrink-0">
@@ -41,31 +41,32 @@ export function Navigation() {
                 className="object-contain object-left"
               />
             </div>
+            <span className="hidden sm:inline crate-stamp text-[10px] text-kernel/90">LOT · MH-SRU · IQF</span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          <nav className="hidden md:flex items-center gap-6">
             {links.map((link) => (
               <Link
                 key={link.id}
                 href={link.href}
                 onClick={(e) => handleNavLinkClick(e, link.id)}
-                className="text-white hover:text-green-400 transition-colors text-sm lg:text-base"
+                className="crate-stamp text-[11px] text-icefield/80 hover:text-kernel transition-colors"
               >
                 {link.label}
               </Link>
             ))}
             <Link
               href="/partner-with-us"
-              className="rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white hover:bg-green-700"
+              className="crate-stamp bg-kernel px-4 py-2 text-[11px] text-chamber hover:bg-icefield"
             >
-              Partner With Us
+              Open a lot
             </Link>
           </nav>
 
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-white min-h-11 min-w-11"
+            className="md:hidden text-icefield min-h-11 min-w-11 hover:bg-white/10 hover:text-kernel"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             onClick={() => setIsOpen(!isOpen)}
@@ -75,14 +76,14 @@ export function Navigation() {
         </div>
 
         {isOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-white/20 pt-4">
+          <nav className="md:hidden mt-4 pb-4 border-t border-kernel/20 pt-4">
             <div className="flex flex-col gap-1">
               {links.map((link) => (
                 <Link
                   key={link.id}
                   href={link.href}
                   onClick={(e) => handleNavLinkClick(e, link.id)}
-                  className="text-white hover:text-green-400 transition-colors min-h-11 flex items-center px-1"
+                  className="crate-stamp text-icefield min-h-11 flex items-center px-1 hover:text-kernel"
                 >
                   {link.label}
                 </Link>
@@ -90,9 +91,9 @@ export function Navigation() {
               <Link
                 href="/partner-with-us"
                 onClick={() => setIsOpen(false)}
-                className="mt-2 inline-flex min-h-11 items-center justify-center rounded-md bg-green-600 px-4 text-white hover:bg-green-700"
+                className="mt-2 inline-flex min-h-11 items-center justify-center bg-kernel px-4 crate-stamp text-chamber"
               >
-                Partner With Us
+                Open a lot
               </Link>
             </div>
           </nav>

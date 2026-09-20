@@ -1,6 +1,5 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Card, CardContent } from "@/components/ui/card"
 import { Linkedin } from "lucide-react"
 
 interface TeamMember {
@@ -25,45 +24,30 @@ export function TeamSection() {
   ]
 
   return (
-    <section className="py-20 bg-green-50">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-4">Meet Our Leadership Team</h2>
-          <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Our dedicated team of experts drives innovation and excellence in every aspect of our operations.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
-          {teamMembers.map((member, index) => (
-            <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardContent className="p-6 text-center">
-                <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-green-100 shadow-md">
-                  <Image
-                    src={member.imageSrc || "/placeholder.svg"}
-                    alt={member.name}
-                    fill
-                    className="object-cover object-top" // Changed object-position to object-top for better framing
-                  />
-                </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{member.name}</h3>
-                <p className="text-green-600 font-semibold mb-3">{member.title}</p>
-                {member.linkedinUrl && (
-                  <Link
-                    href={member.linkedinUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-blue-600 hover:underline text-sm"
-                  >
-                    <Linkedin className="w-4 h-4" />
-                    LinkedIn
-                  </Link>
-                )}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+    <section className="py-16">
+      <p className="section-kicker mb-3">Line leads</p>
+      <h2 className="font-display text-3xl sm:text-4xl uppercase text-chamber mb-10">Leadership</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl">
+        {teamMembers.map((member) => (
+          <article key={member.name} className="border border-chamber/15 bg-white p-6">
+            <div className="relative w-full h-56 mb-5 overflow-hidden">
+              <Image src={member.imageSrc || "/placeholder.svg"} alt={member.name} fill className="object-cover object-top" />
+            </div>
+            <h3 className="font-display text-xl uppercase text-chamber mb-1">{member.name}</h3>
+            <p className="crate-stamp text-[11px] text-pulp mb-3">{member.title}</p>
+            {member.linkedinUrl && (
+              <Link
+                href={member.linkedinUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-chamber hover:text-pulp text-sm"
+              >
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </Link>
+            )}
+          </article>
+        ))}
       </div>
     </section>
   )

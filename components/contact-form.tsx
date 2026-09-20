@@ -59,9 +59,9 @@ export function ContactForm() {
   }, [state])
 
   return (
-    <Card className="bg-white shadow-lg">
+    <Card className="bg-white shadow-none rounded-none border-chamber/20">
       <CardContent className="p-8">
-        <h3 className="text-2xl font-bold text-green-800 mb-6">Send us a Message</h3>
+        <h3 className="font-display text-2xl uppercase text-chamber mb-6">Write the spec</h3>
         {/* Add submission status message */}
         {state?.message && (
           <div
@@ -157,8 +157,8 @@ export function ContactForm() {
             required
           />
           {state?.errors?.message && <p className="text-red-500 text-xs mt-1">{state.errors.message.join(", ")}</p>}
-          <Button type="submit" disabled={isPending} className="w-full bg-green-600 hover:bg-green-700 text-white py-3">
-            {isPending ? "Sending..." : "Send Message"}
+          <Button type="submit" disabled={isPending} className="w-full rounded-none bg-chamber hover:bg-kernel hover:text-chamber text-icefield py-3 crate-stamp text-sm">
+            {isPending ? "Sending..." : "Send to packhouse"}
           </Button>
         </form>
       </CardContent>
