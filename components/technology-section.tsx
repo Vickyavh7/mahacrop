@@ -6,7 +6,7 @@ export function TechnologySection() {
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-green-800 mb-4">Modern Agricultural Technology</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-4">Modern Agricultural Technology</h2>
           <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Leveraging cutting-edge technology and AI-driven solutions to revolutionize farming practices and ensure
@@ -15,7 +15,7 @@ export function TechnologySection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
+          <div className="relative h-56 sm:h-80 lg:h-96 rounded-lg overflow-hidden shadow-lg">
             <Image
               src="/images/ai-farming-interface.png"
               alt="AI-powered agricultural interface"

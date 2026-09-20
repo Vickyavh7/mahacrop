@@ -28,14 +28,14 @@ export function TeamSection() {
     <section className="py-20 bg-green-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-green-800 mb-4">Meet Our Leadership Team</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-4">Meet Our Leadership Team</h2>
           <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Our dedicated team of experts drives innovation and excellence in every aspect of our operations.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
           {teamMembers.map((member, index) => (
             <Card key={index} className="bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
               <CardContent className="p-6 text-center">

@@ -39,7 +39,7 @@ export function WhatsAppFloatingButton() {
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
-          <div className="fixed bottom-6 right-6 z-50">
+          <div className="fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-[max(1.5rem,env(safe-area-inset-right))] z-50">
             <WhatsAppButton
               phoneNumber="919075978141"
               message="Hello! I'm interested in Mahacrop Agrofoods products. Can you please provide more information?"

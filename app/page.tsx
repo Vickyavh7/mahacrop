@@ -29,7 +29,7 @@ export default function HomePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section id="home" className="relative h-screen flex items-center justify-center">
+      <section id="home" className="relative min-h-[100dvh] flex items-center justify-center pt-20">
         <div className="absolute inset-0">
           <Image
             src="/images/farm-aerial.jpg"
@@ -41,28 +41,28 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
 
-        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+        <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 text-balance">
             <span className="text-green-400">Food & Healthy Ingredients</span>
             <br />
             <span className="text-white">at Healthy Environments</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-green-300">
+          <p className="text-base sm:text-xl md:text-2xl mb-8 text-green-300">
             Empowering farmers with eco-friendly practices and tools
           </p>
-          <div className="flex justify-center gap-4"> {/* Added flex and gap for button alignment */}
+          <div className="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-4">
             <Button
               size="lg"
-              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-lg"
+              className="bg-green-600 hover:bg-green-700 text-white px-8 py-3 text-base sm:text-lg min-h-12 w-full sm:w-auto"
               onClick={() => handleScrollTo('products')}
             >
               Explore Our Services
             </Button>
-            <Link href="/partner-with-us" passHref>
+            <Link href="/partner-with-us" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 variant="outline"
-                className="bg-transparent border-white text-white hover:bg-white/20 px-8 py-3 text-lg"
+                className="bg-transparent border-white text-white hover:bg-white/20 px-8 py-3 text-base sm:text-lg min-h-12 w-full"
               >
                 Partner With Us
               </Button>
@@ -81,7 +81,7 @@ export default function HomePage() {
       <section id="about" className="py-20 bg-green-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-green-800 mb-4">About Mahacrop Agro Foods</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-4">About Mahacrop Agro Foods</h2>
             <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
           </div>
 
@@ -136,7 +136,7 @@ export default function HomePage() {
               {/* Left: Name and Information */}
               <div className="space-y-6 text-center md:text-left">
                 <p className="text-sm font-semibold text-gray-600 uppercase tracking-wider">Our Founder</p>
-                <h2 className="text-3xl md:text-4xl font-bold text-green-800 leading-tight whitespace-nowrap">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-800 leading-tight">
                   Our Visionary Founder & CEO
                 </h2>
                 <div className="flex items-center justify-center md:justify-start gap-3">
@@ -211,12 +211,12 @@ export default function HomePage() {
       <section id="quality" className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-green-800 mb-4">Our Quality Standards</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-4">Our Quality Standards</h2>
             <div className="w-24 h-1 bg-green-600 mx-auto mb-8"></div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 rounded-lg overflow-hidden shadow-lg">
+            <div className="relative h-56 sm:h-80 lg:h-96 rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="/images/innovation-concept.png"
                 alt="Agricultural innovation and technology"
@@ -277,7 +277,7 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-green-800/80"></div> {/* Dark overlay for readability */}
         <div className="relative z-10 container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <div className="relative w-10 h-10">
@@ -340,9 +340,21 @@ export default function HomePage() {
             <div>
               <h4 className="font-semibold mb-4">Contact Info</h4>
               <div className="space-y-2 text-green-100 text-sm">
-                <p>📧 mahacropagrofoodsllp@gmail.com</p> {/* Updated email address */}
-                <p>📞 +91 9075978141 / 9168766051</p>
-                <p>📍 WADHU BK, TAL - SHIRUR, DIST- PUNE 412216</p>
+                <p>
+                  <a className="hover:text-white break-all" href="mailto:mahacropagrofoodsllp@gmail.com">
+                    mahacropagrofoodsllp@gmail.com
+                  </a>
+                </p>
+                <p>
+                  <a className="hover:text-white" href="tel:+919075978141">
+                    +91 9075978141
+                  </a>
+                  {" / "}
+                  <a className="hover:text-white" href="tel:+919168766051">
+                    9168766051
+                  </a>
+                </p>
+                <p>Wadhu Bk, Tal - Shirur, Dist - Pune 412216</p>
               </div>
             </div>
           </div>

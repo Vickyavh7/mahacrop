@@ -44,7 +44,7 @@ export function PDFViewer({ pdfUrl, title, description, fileSize = "2.5 MB" }: P
       <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-green-200/30 to-green-300/30 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-br from-orange-200/30 to-orange-300/30 rounded-full blur-3xl"></div>
 
-      <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/50 p-8 hover:shadow-3xl transition-all duration-500">
+      <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/50 p-4 sm:p-8 hover:shadow-3xl transition-all duration-500">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
@@ -58,7 +58,7 @@ export function PDFViewer({ pdfUrl, title, description, fileSize = "2.5 MB" }: P
                 </span>
               </div>
 
-              <h3 className="text-4xl font-bold bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent mb-4">
+              <h3 className="text-2xl sm:text-4xl font-bold bg-gradient-to-r from-green-800 to-green-600 bg-clip-text text-transparent mb-4">
                 {title}
               </h3>
 
@@ -92,7 +92,7 @@ export function PDFViewer({ pdfUrl, title, description, fileSize = "2.5 MB" }: P
             </div>
 
             {/* Stats */}
-            <div className="flex items-center gap-6 pt-4 border-t border-gray-200">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-4 border-t border-gray-200">
               <div className="flex items-center gap-2">
                 <Users className="w-5 h-5 text-green-600" />
                 <span className="text-sm text-gray-600">{downloadCount.toLocaleString()} downloads</span>

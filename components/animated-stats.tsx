@@ -137,7 +137,7 @@ export function AnimatedStats() {
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-green-800 mb-4">Our Impact in Numbers</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-green-800 mb-4">Our Impact in Numbers</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-orange-500 mx-auto mb-8 rounded-full"></div>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Building trust through consistent quality and service excellence across the agricultural industry
@@ -145,7 +145,7 @@ export function AnimatedStats() {
         </div>
 
         {/* Stats Grid - Updated to show 3 in one line */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {stats.map((stat, index) => (
             <Card
               key={index}

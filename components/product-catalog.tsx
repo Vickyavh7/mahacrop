@@ -54,7 +54,7 @@ export function ProductCatalog() {
             <span className="text-green-800 font-semibold">Premium Product Range</span>
           </div>
 
-          <h2 className="text-5xl font-bold mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             <span className="bg-gradient-to-r from-green-800 via-green-600 to-green-800 bg-clip-text text-transparent">
               Product Catalog
             </span>
@@ -68,7 +68,7 @@ export function ProductCatalog() {
           </p>
 
           {/* Stats Row */}
-          <div className="flex justify-center gap-8 mt-12">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 mt-12">
             {[
               { icon: Award, label: "Premium Quality", value: "ISO Certified" },
               { icon: Globe, label: "Global Reach", value: "15+ Countries" },
@@ -143,9 +143,7 @@ export function ProductCatalog() {
                   </ul>
 
                   {/* Hover Button */}
-                  <div
-                    className={`mt-6 transform transition-all duration-300 ${hoveredCard === index ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
-                  >
+                  <div className="mt-6">
                     <Button
                       variant="outline"
                       size="sm"

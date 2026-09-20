@@ -14,10 +14,10 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
   useEffect(() => {
     // Multi-phase loading animation
     const phases = [
-      { duration: 800, phase: 0 },
-      { duration: 1000, phase: 1 },
-      { duration: 800, phase: 2 },
-      { duration: 600, phase: 3 },
+      { duration: 400, phase: 0 },
+      { duration: 500, phase: 1 },
+      { duration: 400, phase: 2 },
+      { duration: 300, phase: 3 },
     ]
 
     let currentPhase = 0
@@ -102,7 +102,7 @@ export function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
 
         {/* Premium Typography */}
         <div className="text-center space-y-3 animate-premium-text-reveal mt-8">
-          <h1 className="text-4xl font-bold text-green-800 tracking-wider drop-shadow-2xl">
+          <h1 className="text-3xl sm:text-4xl font-bold text-green-800 tracking-wider drop-shadow-2xl">
             <span className="bg-gradient-to-r from-green-800 to-green-900 bg-clip-text text-transparent">MAHACROP</span>
           </h1>
           <h2 className="text-xl font-semibold bg-gradient-to-r from-orange-300 to-orange-400 bg-clip-text text-transparent drop-shadow-lg">

@@ -74,7 +74,7 @@ export function Certifications() {
             <span className="text-green-800 font-semibold">Quality Assurance</span>
           </div>
 
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             <span className="text-gray-800">Our Licences and </span>
             <span className="text-green-600">Certifications</span>
           </h2>
