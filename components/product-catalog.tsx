@@ -33,7 +33,7 @@ export function ProductCatalog() {
 
   return (
     <section className="py-20 bg-icefield relative">
-      <div className="container mx-auto px-6 relative z-10 lg:pr-28">
+      <div className="container mx-auto px-6 relative z-10">
         <p className="section-kicker mb-3">Chamber inventory</p>
         <h2 className="font-display text-4xl sm:text-5xl uppercase text-chamber mb-4">Product lots</h2>
         <p className="text-lg text-ink/80 max-w-2xl mb-12">

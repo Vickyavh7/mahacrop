@@ -61,7 +61,7 @@ export function Certifications() {
 
   return (
     <section className="py-20 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10 lg:pr-28">
+      <div className="container mx-auto px-6 relative z-10">
         <p className="section-kicker mb-3">Marks</p>
         <h2 className="font-display text-4xl sm:text-5xl uppercase text-chamber mb-4">
           Licences and certifications

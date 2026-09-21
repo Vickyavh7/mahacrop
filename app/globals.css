@@ -90,6 +90,107 @@
   color: #12382c;
 }
 
+@keyframes kenburns-field {
+  0% {
+    transform: scale(1.34) translate3d(-7%, -6%, 0);
+  }
+  100% {
+    transform: scale(1.46) translate3d(-10%, -4%, 0);
+  }
+}
+
+.hero-field-motion {
+  animation: kenburns-field 22s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes petal-arrive {
+  0% {
+    opacity: 0;
+    transform: translate(var(--from-x), var(--from-y)) scale(0.35);
+  }
+  78% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes trunk-grow {
+  0% {
+    opacity: 0;
+    transform: translate(var(--from-x), var(--from-y)) scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes wordmark-join {
+  0%,
+  58% {
+    opacity: 0;
+    transform: translateX(36px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes logo-lock {
+  0%,
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes loader-hold {
+  0%,
+  78% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loader-petal,
+.loader-trunk,
+.loader-word,
+.loader-logo-final {
+  position: absolute;
+  inset: 0;
+}
+
+.loader-petal {
+  animation: petal-arrive 0.75s cubic-bezier(0.22, 1.25, 0.36, 1) both;
+}
+
+.loader-trunk {
+  animation: trunk-grow 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  transform-origin: 12% 100%;
+}
+
+.loader-word {
+  animation: wordmark-join 2.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.loader-logo-final {
+  animation: logo-lock 2.35s ease both;
+}
+
+.loader-hold {
+  animation: loader-hold 2.8s ease both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

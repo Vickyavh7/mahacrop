@@ -24,7 +24,7 @@ export function Testimonials() {
 
   return (
     <section className="py-20 bg-icefield">
-      <div className="container mx-auto px-6 lg:pr-28">
+      <div className="container mx-auto px-6">
         <p className="section-kicker mb-3">Buyers</p>
         <h2 className="font-display text-4xl sm:text-5xl uppercase text-chamber mb-10">From the other dock</h2>
         <div className="grid md:grid-cols-3 gap-6">

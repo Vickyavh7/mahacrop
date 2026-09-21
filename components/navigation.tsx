@@ -33,7 +33,7 @@ export function Navigation() {
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between gap-3">
           <Link href="/" className="flex items-center gap-3 min-w-0" onClick={() => setIsOpen(false)}>
-            <div className="relative w-32 h-10 sm:w-40 sm:h-12 shrink-0">
+            <div className="relative w-32 h-10 sm:w-40 sm:h-12 shrink-0 overflow-hidden">
               <Image
                 src="/images/mahacrop logo.png"
                 alt="Mahacrop Agrofoods LLP Logo"
@@ -41,7 +41,9 @@ export function Navigation() {
                 className="object-contain object-left"
               />
             </div>
-            <span className="hidden sm:inline crate-stamp text-[10px] text-kernel/90">LOT · MH-SRU · IQF</span>
+            <span className="hidden lg:inline crate-stamp text-[10px] text-kernel/90">
+              Farm · Packhouse · IQF · Port
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">

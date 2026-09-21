@@ -12,7 +12,6 @@ import { AnimatedStats } from "@/components/animated-stats"
 import { FAQSection } from "@/components/faq-section"
 import { TeamSection } from "@/components/team-section"
 import { AwardsSection } from "@/components/awards-section"
-import { ColdChainRail } from "@/components/cold-chain-rail"
 import { Linkedin } from "lucide-react"
 
 export default function HomePage() {
@@ -24,80 +23,52 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-icefield pb-10 lg:pb-0">
+    <div className="min-h-screen bg-icefield">
       <Navigation />
-      <ColdChainRail />
 
-      <section id="home" className="relative min-h-[100dvh] pt-20 lg:pr-24">
-        <div className="grid min-h-[calc(100dvh-5rem)] lg:grid-cols-12">
-          <div className="relative z-10 flex flex-col justify-center px-4 py-12 sm:px-8 lg:col-span-6 lg:px-12 bg-chamber text-icefield overflow-hidden">
-            <Image
-              src="/images/frozen-vegetables.png"
-              alt=""
-              fill
-              className="object-cover opacity-50"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-br from-chamber/90 via-chamber/78 to-chamber/65" />
-            <div
-              className="pointer-events-none absolute inset-0 opacity-[0.12]"
-              style={{
-                backgroundImage:
-                  "repeating-linear-gradient(90deg, transparent 0, transparent 47px, #F0C75E 47px, #F0C75E 48px)",
-              }}
-            />
-            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 hidden sm:flex flex-col justify-between py-16 crate-stamp text-[9px] text-kernel/70">
-              <span>0°</span>
-              <span>−8°</span>
-              <span>−18°</span>
-            </div>
-            <div className="relative z-10">
-            <p className="crate-stamp text-kernel mb-6">IQF · Sweet corn · Export hold</p>
-            <p className="font-display text-[4.5rem] sm:text-8xl leading-none text-kernel">−18°</p>
-            <h1 className="font-display mt-4 text-4xl sm:text-5xl md:text-6xl leading-[0.95] uppercase">
-              Held from the farm
-              <span className="block text-icefield">to the port.</span>
-            </h1>
-            <p className="mt-6 max-w-md text-base sm:text-lg text-icefield/80">
-              IQF sweet corn, vegetables, fruits, and pulps. Cold chain locked at minus eighteen from Shirur packhouse
-              to your dock.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <button
-                type="button"
-                className="min-h-12 bg-kernel px-6 crate-stamp text-sm text-chamber hover:bg-icefield"
-                onClick={() => handleScrollTo("products")}
-              >
-                Read the lots
-              </button>
-              <Link
-                href="/partner-with-us"
-                className="min-h-12 inline-flex items-center justify-center border border-kernel/60 px-6 crate-stamp text-sm text-kernel hover:bg-kernel hover:text-chamber"
-              >
-                Open a lot
-              </Link>
-            </div>
-            <p className="mt-10 crate-stamp text-[10px] text-steel">LOT MH-SRU · IQF · IBM · FSSAI</p>
-            </div>
+      <section id="home" className="relative min-h-[100dvh] overflow-hidden pt-20 text-icefield">
+        <div className="absolute inset-0 overflow-hidden">
+          <Image
+            src="/images/farm-aerial.jpg"
+            alt="Aerial view of agricultural farmland in Shirur"
+            fill
+            className="object-cover object-center hero-field-motion"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-chamber/92 via-chamber/62 to-chamber/28" />
+          <div className="absolute inset-0 bg-gradient-to-t from-chamber/50 via-transparent to-chamber/25" />
+        </div>
+        <div className="relative z-10 flex min-h-[calc(100dvh-5rem)] flex-col justify-center px-4 py-12 sm:px-8 lg:px-16">
+          <p className="font-display text-[4.5rem] sm:text-8xl leading-none text-kernel">−18°</p>
+          <h1 className="font-display mt-4 max-w-3xl text-4xl sm:text-5xl md:text-6xl leading-[0.95] uppercase">
+            Held from the farm
+            <span className="block text-icefield">to the port.</span>
+          </h1>
+          <p className="mt-6 max-w-md text-base sm:text-lg text-icefield/85">
+            IQF sweet corn, vegetables, fruits, and pulps. Cold chain locked at minus eighteen from Shirur packhouse
+            to your dock.
+          </p>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <button
+              type="button"
+              className="min-h-12 bg-kernel px-6 crate-stamp text-sm text-chamber hover:bg-icefield"
+              onClick={() => handleScrollTo("products")}
+            >
+              Read the lots
+            </button>
+            <Link
+              href="/partner-with-us"
+              className="min-h-12 inline-flex items-center justify-center border border-kernel/60 px-6 crate-stamp text-sm text-kernel hover:bg-kernel hover:text-chamber"
+            >
+              Open a lot
+            </Link>
           </div>
-          <div className="relative min-h-[42vh] lg:col-span-6 lg:min-h-full">
-            <Image
-              src="/images/farm-aerial.jpg"
-              alt="Aerial view of agricultural farmland in Shirur"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute inset-0 bg-chamber/20" />
-            <div className="absolute bottom-4 left-4 right-4 border border-kernel/50 bg-chamber/80 px-3 py-2 crate-stamp text-[10px] text-kernel backdrop-blur-sm">
-              Crate window · harvest still in the field · freeze in hours
-            </div>
-          </div>
+          <p className="mt-10 crate-stamp text-[10px] text-icefield/70">Farm · Packhouse · IQF · Port</p>
         </div>
       </section>
 
       <section id="about" className="py-20 bg-icefield">
-        <div className="container mx-auto px-6 lg:pr-28">
+        <div className="container mx-auto px-6">
           <p className="section-kicker mb-3">House</p>
           <h2 className="font-display text-4xl sm:text-5xl uppercase text-chamber mb-10">Mahacrop Agro Foods</h2>
 
@@ -197,7 +168,7 @@ export default function HomePage() {
       </section>
 
       <section id="quality" className="py-20 bg-white">
-        <div className="container mx-auto px-6 lg:pr-28">
+        <div className="container mx-auto px-6">
           <p className="section-kicker mb-3">Lab</p>
           <h2 className="font-display text-4xl sm:text-5xl uppercase text-chamber mb-10">Quality hold</h2>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -231,7 +202,7 @@ export default function HomePage() {
       <AwardsSection />
 
       <footer id="contact" className="relative py-14 text-icefield overflow-hidden bg-chamber">
-        <div className="relative z-10 container mx-auto px-6 lg:pr-28">
+        <div className="relative z-10 container mx-auto px-6">
           <p className="section-kicker text-kernel mb-8">Dock</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>

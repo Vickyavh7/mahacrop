@@ -37,7 +37,7 @@ export function FAQSection() {
 
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-6 lg:pr-28">
+      <div className="container mx-auto px-6">
         <p className="section-kicker mb-3">Spec questions</p>
         <h2 className="font-display text-4xl sm:text-5xl uppercase text-chamber mb-10">Ask the packhouse</h2>
 

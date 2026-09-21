@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 export function TechnologySection() {
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-6 lg:pr-28">
+      <div className="container mx-auto px-6">
         <p className="section-kicker mb-3">Line</p>
         <h2 className="font-display text-4xl sm:text-5xl uppercase text-chamber mb-10">Packhouse intelligence</h2>
         <div className="grid lg:grid-cols-2 gap-12 items-center">

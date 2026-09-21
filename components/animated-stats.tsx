@@ -128,7 +128,7 @@ export function AnimatedStats() {
 
   return (
     <section className="py-20 bg-chamber text-icefield relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10 lg:pr-28">
+      <div className="container mx-auto px-6 relative z-10">
         <p className="section-kicker text-kernel mb-3">Scale</p>
         <h2 className="font-display text-4xl sm:text-5xl uppercase mb-4">What the line already holds</h2>
         <p className="text-icefield/75 max-w-2xl mb-12">
